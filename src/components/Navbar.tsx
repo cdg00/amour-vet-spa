@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -35,8 +34,8 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:py-5">
-        <button onClick={() => scrollTo("#hero")} className="flex items-center gap-2">
-          <img src={logo} alt="Amor Canino" className="h-10 w-auto" />
+        <button onClick={() => scrollTo("#hero")} className="font-serif text-xl tracking-editorial text-primary">
+          Amor Canino
         </button>
 
         {/* Desktop */}
