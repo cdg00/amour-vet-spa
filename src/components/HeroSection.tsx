@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-clinic.jpg";
+import logo from "@/assets/logo.png";
 
 export default function HeroSection() {
   return (
@@ -61,6 +62,14 @@ export default function HeroSection() {
           >
             Nuestros Servicios
           </a>
+          <motion.img
+            src={logo}
+            alt="Amor Canino"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mx-auto mt-8 h-32 w-auto md:h-44"
+          />
         </motion.div>
       </div>
     </section>
