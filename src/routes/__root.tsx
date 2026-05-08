@@ -66,15 +66,20 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  const [qc] = useState(() => new QueryClient({
+    defaultOptions: { queries: { staleTime: 30_000, refetchOnWindowFocus: false } },
+  }));
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <Header />
-      <main className="flex-1">
-        <Outlet />
-      </main>
-      <Footer />
-      <WhatsAppFloat />
-      <Toaster richColors position="top-center" />
-    </div>
+    <QueryClientProvider client={qc}>
+      <div className="min-h-screen bg-background flex flex-col">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+        <WhatsAppFloat />
+        <Toaster richColors position="top-center" />
+      </div>
+    </QueryClientProvider>
   );
 }
