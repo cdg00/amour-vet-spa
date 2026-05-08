@@ -37,7 +37,7 @@ export default function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="text-foreground" aria-label="Inicio">
-          <Logo className="h-7 w-auto" />
+          <Logo className="h-10 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
