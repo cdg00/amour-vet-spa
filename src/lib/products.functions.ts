@@ -1,0 +1,51 @@
+import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
+import { supabaseAdmin } from "@/integrations/supabase/client.server";
+
+export type Product = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  description: string | null;
+  stock: number;
+  featured: boolean;
+};
+
+export const listProducts = createServerFn({ method: "GET" })
+  .inputValidator((d: { category?: string } | undefined) => d ?? {})
+  .handler(async ({ data }) => {
+    const q = supabaseAdmin
+      .from("products")
+      .select("id,name,category,price,description,stock,featured")
+      .eq("active", true)
+      .order("created_at", { ascending: false });
+    if (data.category) q.eq("category", data.category as never);
+    const { data: rows, error } = await q;
+    if (error) throw new Error(error.message);
+    return (rows ?? []) as Product[];
+  });
+
+export const listFeatured = createServerFn({ method: "GET" }).handler(async () => {
+  const { data, error } = await supabaseAdmin
+    .from("products")
+    .select("id,name,category,price,description,stock,featured")
+    .eq("active", true)
+    .eq("featured", true)
+    .limit(8);
+  if (error) throw new Error(error.message);
+  return (data ?? []) as Product[];
+});
+
+export const getProduct = createServerFn({ method: "GET" })
+  .inputValidator((d) => z.object({ id: z.string().uuid() }).parse(d))
+  .handler(async ({ data }) => {
+    const { data: row, error } = await supabaseAdmin
+      .from("products")
+      .select("id,name,category,price,description,stock,featured")
+      .eq("id", data.id)
+      .eq("active", true)
+      .maybeSingle();
+    if (error) throw new Error(error.message);
+    return row as Product | null;
+  });
