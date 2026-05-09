@@ -41,7 +41,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-background/80 tracking-editorial"
         >
-          Diseño íntimo, calce perfecto. Una colección curada para vos.
+          Diseño íntimo, calce perfecto.
         </motion.p>
 
         <motion.div

@@ -1,7 +1,7 @@
 const items = [
   { quote: "El calce perfecto. Me encantó la atención y la calidad de la seda.", author: "Camila R." },
-  { quote: "Diseños que se sienten únicos. Volvería a comprar sin dudar.", author: "Lucía M." },
-  { quote: "Una experiencia distinta. El detalle del packaging fue hermoso.", author: "Sofía A." },
+  { quote: "La calidad de la tela es excelente, súper suave y cómoda.", author: "Lucía M." },
+  { quote: "Hermosos diseños, ya quiero comprar más.", author: "Sofía A." },
 ];
 
 export default function Testimonials() {
