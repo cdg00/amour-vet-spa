@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-lingerie.jpg";
+import Logo from "./Logo";
 
 export default function HeroSection() {
   return (
@@ -56,6 +57,15 @@ export default function HeroSection() {
           >
             Ver Colección
           </Link>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 1.2 }}
+          className="mt-10 flex justify-center"
+        >
+          <Logo className="h-20 w-20 md:h-24 md:w-24" />
         </motion.div>
       </div>
     </section>
