@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Logo from "./Logo";
 import { CONTACT, BRAND } from "@/lib/contact";
 import { CATEGORIES } from "@/lib/categories";
@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid md:grid-cols-4 gap-10">
           <div>
-            <Logo className="h-8 w-auto text-foreground" />
+            <Logo className="h-14 w-14" />
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
               {BRAND.tagline}. Diseñamos prendas y detalles para sentirte única todos los días.
             </p>
@@ -39,15 +39,6 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin size={14} strokeWidth={1.5} className="mt-0.5 shrink-0" />
                 <span>{CONTACT.location}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone size={14} strokeWidth={1.5} className="shrink-0" />
-                <a
-                  href={`tel:+${CONTACT.whatsappNumber}`}
-                  className="hover:text-rose-bright transition-colors"
-                >
-                  {CONTACT.phoneDisplay}
-                </a>
               </li>
             </ul>
           </div>
