@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Testimonials from "@/components/Testimonials";
-import NewsletterWhatsApp from "@/components/NewsletterWhatsApp";
+import PaymentLocation from "@/components/PaymentLocation";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -16,7 +16,7 @@ function Index() {
       <CategoryGrid />
       <FeaturedProducts />
       <Testimonials />
-      <NewsletterWhatsApp />
+      <PaymentLocation />
     </>
   );
 }
