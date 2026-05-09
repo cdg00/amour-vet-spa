@@ -36,8 +36,8 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link to="/" className="text-foreground" aria-label="Inicio">
-          <Logo className="h-10 w-10" />
+        <Link to="/" className="font-serif text-lg text-foreground" aria-label="Inicio">
+          Fashion Intimate
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
