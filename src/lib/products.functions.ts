@@ -10,14 +10,17 @@ export type Product = {
   description: string | null;
   stock: number;
   featured: boolean;
+  image_url: string | null;
 };
+
+const SELECT = "id,name,category,price,description,stock,featured,image_url";
 
 export const listProducts = createServerFn({ method: "GET" })
   .inputValidator((d: { category?: string } | undefined) => d ?? {})
   .handler(async ({ data }) => {
     const q = supabaseAdmin
       .from("products")
-      .select("id,name,category,price,description,stock,featured")
+      .select(SELECT)
       .eq("active", true)
       .order("created_at", { ascending: false });
     if (data.category) q.eq("category", data.category as never);
@@ -29,7 +32,7 @@ export const listProducts = createServerFn({ method: "GET" })
 export const listFeatured = createServerFn({ method: "GET" }).handler(async () => {
   const { data, error } = await supabaseAdmin
     .from("products")
-    .select("id,name,category,price,description,stock,featured")
+    .select(SELECT)
     .eq("active", true)
     .eq("featured", true)
     .limit(8);
@@ -42,7 +45,7 @@ export const getProduct = createServerFn({ method: "GET" })
   .handler(async ({ data }) => {
     const { data: row, error } = await supabaseAdmin
       .from("products")
-      .select("id,name,category,price,description,stock,featured")
+      .select(SELECT)
       .eq("id", data.id)
       .eq("active", true)
       .maybeSingle();

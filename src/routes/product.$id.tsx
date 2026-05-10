@@ -49,7 +49,7 @@ function ProductPage() {
     );
   }
 
-  const img = CATEGORY_IMAGE[product.category as CategorySlug];
+  const img = product.image_url || CATEGORY_IMAGE[product.category as CategorySlug];
 
   return (
     <div className="pt-28 pb-24 mx-auto max-w-6xl px-6">
