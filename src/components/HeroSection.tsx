@@ -24,7 +24,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-[11px] tracking-wide-editorial uppercase text-primary"
         >
-          Lencería de lujo
+          Lencería
         </motion.p>
 
         <motion.h1
