@@ -4,7 +4,7 @@ import { formatARS } from "@/lib/contact";
 import type { Product } from "@/lib/products.functions";
 
 export default function ProductCard({ product }: { product: Product }) {
-  const img = CATEGORY_IMAGE[product.category as CategorySlug];
+  const img = product.image_url || CATEGORY_IMAGE[product.category as CategorySlug];
   return (
     <Link to="/product/$id" params={{ id: product.id }} className="group block">
       <div className="relative aspect-[4/5] overflow-hidden bg-muted">
