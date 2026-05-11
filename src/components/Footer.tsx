@@ -49,9 +49,6 @@ export default function Footer() {
               <li>· Transferencia bancaria</li>
               <li>· Efectivo</li>
             </ul>
-            <p className="mt-4 text-[10px] tracking-wide-editorial uppercase text-muted-foreground">
-              Coordinamos envío por WhatsApp
-            </p>
           </div>
         </div>
 
