@@ -1,7 +1,7 @@
 // Brand & contact constants for Fashion Intimate
 export const BRAND = {
   name: "Fashion Intimate",
-  tagline: "Lencería de lujo · Diseño íntimo",
+  tagline: "Lencería · Diseño íntimo",
 };
 
 export const CONTACT = {
