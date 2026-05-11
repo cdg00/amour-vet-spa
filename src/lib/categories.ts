@@ -24,7 +24,7 @@ export const CATEGORIES: {
   { slug: "medias", label: "Medias", subtitle: "Soquetes · 3/4", image: medias },
   { slug: "maquillaje", label: "Maquillaje", subtitle: "Belleza", image: maquillaje },
   { slug: "accesorios", label: "Accesorios", subtitle: "Detalles", image: accesorios },
-  { slug: "boxers", label: "Boxers", subtitle: "Hombre", image: boxers },
+  { slug: "boxers", label: "Boxer", subtitle: "Hombre", image: boxers },
 ];
 
 export const CATEGORY_IMAGE: Record<CategorySlug, string> = {
