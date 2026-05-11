@@ -77,7 +77,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
-        <WhatsAppFloat />
+        
         <Toaster richColors position="top-center" />
       </div>
     </QueryClientProvider>
