@@ -4,7 +4,6 @@ import medias from "@/assets/cat-medias.jpg";
 import maquillaje from "@/assets/cat-maquillaje.jpg";
 import accesorios from "@/assets/cat-accesorios.jpg";
 import boxers from "@/assets/cat-boxers.jpg";
-import bufandas from "@/assets/cat-bufandas.jpg";
 
 export type CategorySlug =
   | "lenceria"
@@ -12,8 +11,7 @@ export type CategorySlug =
   | "medias"
   | "maquillaje"
   | "accesorios"
-  | "boxers"
-  | "bufandas";
+  | "boxers";
 
 export const CATEGORIES: {
   slug: CategorySlug;
@@ -27,11 +25,10 @@ export const CATEGORIES: {
   { slug: "maquillaje", label: "Maquillaje", subtitle: "Belleza", image: maquillaje },
   { slug: "accesorios", label: "Accesorios", subtitle: "Detalles", image: accesorios },
   { slug: "boxers", label: "Boxers", subtitle: "Hombre", image: boxers },
-  { slug: "bufandas", label: "Bufandas", subtitle: "Abrigo", image: bufandas },
 ];
 
 export const CATEGORY_IMAGE: Record<CategorySlug, string> = {
-  lenceria, bombachas, medias, maquillaje, accesorios, boxers, bufandas,
+  lenceria, bombachas, medias, maquillaje, accesorios, boxers,
 };
 
 export function categoryLabel(slug: string): string {
