@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useState } from "react";
 import Header from "@/components/Header";
@@ -69,14 +69,16 @@ function RootComponent() {
   const [qc] = useState(() => new QueryClient({
     defaultOptions: { queries: { staleTime: 30_000, refetchOnWindowFocus: false } },
   }));
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isPortfolio = pathname.startsWith("/portfolio");
   return (
     <QueryClientProvider client={qc}>
       <div className="min-h-screen bg-background flex flex-col">
-        <Header />
+        {!isPortfolio && <Header />}
         <main className="flex-1">
           <Outlet />
         </main>
-        <Footer />
+        {!isPortfolio && <Footer />}
         
         <Toaster richColors position="top-center" />
       </div>
