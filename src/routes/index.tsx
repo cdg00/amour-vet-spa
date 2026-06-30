@@ -1,22 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import HeroSection from "@/components/HeroSection";
-import CategoryGrid from "@/components/CategoryGrid";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import Testimonials from "@/components/Testimonials";
-import PaymentLocation from "@/components/PaymentLocation";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  beforeLoad: () => {
+    throw redirect({ to: "/portfolio" });
+  },
 });
-
-function Index() {
-  return (
-    <>
-      <HeroSection />
-      <CategoryGrid />
-      <FeaturedProducts />
-      <Testimonials />
-      <PaymentLocation />
-    </>
-  );
-}
