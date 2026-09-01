@@ -183,12 +183,22 @@ function CartPage() {
                 required
                 className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
               />
+              <input
+                type="text"
+                placeholder="Dirección / Entrega (opcional)"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
+              />
+              <p className="text-[11px] text-muted-foreground">
+                Pago por transferencia — Alias: {BANK.alias} · Titular: {BANK.holder}
+              </p>
               <button
                 type="submit"
                 disabled={checkout.isPending}
                 className="w-full bg-rose-bright text-rose-bright-foreground py-4 text-[11px] tracking-wide-editorial uppercase hover:opacity-90 disabled:opacity-60 transition-opacity"
               >
-                {checkout.isPending ? "Procesando…" : "Finalizar por WhatsApp"}
+                {checkout.isPending ? "Procesando…" : "Confirmar pedido por WhatsApp"}
               </button>
             </form>
           </aside>
