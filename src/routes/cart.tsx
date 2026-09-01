@@ -12,7 +12,7 @@ import {
   checkoutOrder,
 } from "@/lib/cart.functions";
 import { CATEGORY_IMAGE, type CategorySlug } from "@/lib/categories";
-import { formatARS, whatsappLink } from "@/lib/contact";
+import { formatARS, whatsappLink, BANK } from "@/lib/contact";
 import { useSessionId } from "@/hooks/use-session-id";
 
 export const Route = createFileRoute("/cart")({
@@ -62,8 +62,20 @@ function CartPage() {
       const lines = res.items
         .map((it: any) => `• ${it.qty}× ${it.name} (${formatARS(it.price)})`)
         .join("\n");
-      const msg = `Hola Fashion Intimate, hago el siguiente pedido:\n\n${lines}\n\nTotal: ${formatARS(res.total)}\nTeléfono: ${phone}${name ? `\nNombre: ${name}` : ""}\n\nPedido #${res.orderId.slice(0, 8)}`;
-      window.location.href = whatsappLink(msg);
+      const msg =
+        `Hola Fashion Intimate, hago el siguiente pedido:\n\n` +
+        `Pedido #${res.orderId.slice(0, 8)}\n\n` +
+        `${lines}\n\n` +
+        `Total a pagar: ${formatARS(res.total)}\n\n` +
+        `Mis datos:\n` +
+        `${name ? `Nombre: ${name}\n` : ""}` +
+        `Teléfono: ${phone}\n` +
+        `${address ? `Dirección/Entrega: ${address}\n` : ""}` +
+        `\nDatos bancarios para transferencia:\n` +
+        `Alias: ${BANK.alias}\n` +
+        `Titular: ${BANK.holder}\n\n` +
+        `Una vez realizada la transferencia, envío el comprobante por este chat para confirmar la compra.`;
+      window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
     },
     onError: (e) => toast.error(e.message ?? "No se pudo finalizar"),
   });
