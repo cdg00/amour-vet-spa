@@ -11,6 +11,11 @@ export const CONTACT = {
   location: "Barker, Villa Cacique, Tandil",
 };
 
+export const BANK = {
+  alias: "CHINO.ACACIA.CABO",
+  holder: "Camila Denis Gómez",
+};
+
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${CONTACT.whatsappNumber}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;

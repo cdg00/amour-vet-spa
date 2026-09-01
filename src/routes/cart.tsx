@@ -12,7 +12,7 @@ import {
   checkoutOrder,
 } from "@/lib/cart.functions";
 import { CATEGORY_IMAGE, type CategorySlug } from "@/lib/categories";
-import { formatARS, whatsappLink } from "@/lib/contact";
+import { formatARS, whatsappLink, BANK } from "@/lib/contact";
 import { useSessionId } from "@/hooks/use-session-id";
 
 export const Route = createFileRoute("/cart")({
@@ -32,6 +32,7 @@ function CartPage() {
 
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
 
   const { data: cart, isLoading } = useQuery({
     queryKey: ["cart", sessionId],
@@ -61,8 +62,20 @@ function CartPage() {
       const lines = res.items
         .map((it: any) => `• ${it.qty}× ${it.name} (${formatARS(it.price)})`)
         .join("\n");
-      const msg = `Hola Fashion Intimate, hago el siguiente pedido:\n\n${lines}\n\nTotal: ${formatARS(res.total)}\nTeléfono: ${phone}${name ? `\nNombre: ${name}` : ""}\n\nPedido #${res.orderId.slice(0, 8)}`;
-      window.location.href = whatsappLink(msg);
+      const msg =
+        `Hola Fashion Intimate, hago el siguiente pedido:\n\n` +
+        `Pedido #${res.orderId.slice(0, 8)}\n\n` +
+        `${lines}\n\n` +
+        `Total a pagar: ${formatARS(res.total)}\n\n` +
+        `Mis datos:\n` +
+        `${name ? `Nombre: ${name}\n` : ""}` +
+        `Teléfono: ${phone}\n` +
+        `${address ? `Dirección/Entrega: ${address}\n` : ""}` +
+        `\nDatos bancarios para transferencia:\n` +
+        `Alias: ${BANK.alias}\n` +
+        `Titular: ${BANK.holder}\n\n` +
+        `Una vez realizada la transferencia, envío el comprobante por este chat para confirmar la compra.`;
+      window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
     },
     onError: (e) => toast.error(e.message ?? "No se pudo finalizar"),
   });
@@ -170,12 +183,22 @@ function CartPage() {
                 required
                 className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
               />
+              <input
+                type="text"
+                placeholder="Dirección / Entrega (opcional)"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
+              />
+              <p className="text-[11px] text-muted-foreground">
+                Pago por transferencia — Alias: {BANK.alias} · Titular: {BANK.holder}
+              </p>
               <button
                 type="submit"
                 disabled={checkout.isPending}
                 className="w-full bg-rose-bright text-rose-bright-foreground py-4 text-[11px] tracking-wide-editorial uppercase hover:opacity-90 disabled:opacity-60 transition-opacity"
               >
-                {checkout.isPending ? "Procesando…" : "Finalizar por WhatsApp"}
+                {checkout.isPending ? "Procesando…" : "Confirmar pedido por WhatsApp"}
               </button>
             </form>
           </aside>
