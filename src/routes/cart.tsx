@@ -32,6 +32,7 @@ function CartPage() {
 
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
 
   const { data: cart, isLoading } = useQuery({
     queryKey: ["cart", sessionId],
