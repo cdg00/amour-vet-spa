@@ -60,7 +60,10 @@ function CartPage() {
     onSuccess: (res) => {
       qc.invalidateQueries({ queryKey: ["cart"] });
       const lines = res.items
-        .map((it: any) => `• ${it.qty}× ${it.name} (${formatARS(it.price)})`)
+        .map(
+          (it: any) =>
+            `• ${it.qty}× ${it.name}${it.color && it.color !== "Único" ? ` — Color: ${it.color}` : ""} — ${formatARS(it.price)} c/u = ${formatARS(it.price * it.qty)}`,
+        )
         .join("\n");
       const msg =
         `Hola Fashion Intimate, hago el siguiente pedido:\n\n` +
@@ -126,8 +129,16 @@ function CartPage() {
                       <h3 className="font-serif text-base text-foreground">
                         {line.product?.name ?? "Producto"}
                       </h3>
+                      {line.color && line.color !== "Único" && (
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Color: {line.color}
+                        </p>
+                      )}
                       <p className="text-sm text-muted-foreground mt-1">
-                        {formatARS(Number(line.product?.price ?? 0))}
+                        {formatARS(Number(line.product?.price ?? 0))} × {line.qty} ={" "}
+                        <span className="text-foreground">
+                          {formatARS(Number(line.product?.price ?? 0) * line.qty)}
+                        </span>
                       </p>
                     </div>
                     <div className="flex items-center justify-between">
@@ -138,7 +149,7 @@ function CartPage() {
                         >−</button>
                         <span className="px-3">{line.qty}</span>
                         <button
-                          onClick={() => updateQty.mutate({ itemId: line.id, qty: Math.min(99, line.qty + 1) })}
+                          onClick={() => updateQty.mutate({ itemId: line.id, qty: Math.min(line.variant_stock ?? 99, line.qty + 1) })}
                           className="px-3 py-1 hover:bg-muted"
                         >+</button>
                       </div>

@@ -21,6 +21,7 @@ function ProductPage() {
   const qc = useQueryClient();
   const navigate = useNavigate();
   const [qty, setQty] = useState(1);
+  const [variantId, setVariantId] = useState<string | null>(null);
 
   const { data: product, isLoading } = useQuery({
     queryKey: ["product", id],
@@ -29,7 +30,14 @@ function ProductPage() {
 
   const m = useMutation({
     mutationFn: () =>
-      add({ data: { sessionId: sessionId!, productId: id, qty } }),
+      add({
+        data: {
+          sessionId: sessionId!,
+          productId: id,
+          ...(selected ? { variantId: selected.id } : {}),
+          qty,
+        },
+      }),
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["cart"] });
       toast.success("Agregado al carrito");
@@ -48,6 +56,16 @@ function ProductPage() {
       </div>
     );
   }
+
+  const variants = product.variants ?? [];
+  const selected =
+    variants.find((v) => v.id === variantId) ??
+    variants.find((v) => v.stock > 0) ??
+    variants[0] ??
+    null;
+  const maxQty = selected ? Math.max(1, selected.stock) : 99;
+  const soldOut = !!selected && selected.stock <= 0;
+  const showColors = variants.length > 1 || (variants[0]?.color ?? "Único") !== "Único";
 
   const img = product.image_url || CATEGORY_IMAGE[product.category as CategorySlug];
 
@@ -69,6 +87,52 @@ function ProductPage() {
             </p>
           )}
 
+          {showColors && (
+            <div className="mt-8">
+              <span className="text-[10px] tracking-wide-editorial uppercase text-muted-foreground">
+                Color
+              </span>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {variants.map((v) => {
+                  const out = v.stock <= 0;
+                  const active = selected?.id === v.id;
+                  return (
+                    <button
+                      key={v.id}
+                      type="button"
+                      disabled={out}
+                      onClick={() => {
+                        setVariantId(v.id);
+                        setQty(1);
+                      }}
+                      className={`flex items-center gap-2 border px-3 py-2 text-xs transition-colors ${
+                        active
+                          ? "border-rose-bright text-foreground"
+                          : "border-border text-foreground/70 hover:border-foreground/40"
+                      } ${out ? "opacity-45 line-through cursor-not-allowed" : ""}`}
+                    >
+                      {v.color_hex && (
+                        <span
+                          className="h-4 w-4 rounded-full border border-border"
+                          style={{ backgroundColor: v.color_hex }}
+                        />
+                      )}
+                      {v.color}
+                      {out && <span className="ml-1 no-underline">· Agotado</span>}
+                    </button>
+                  );
+                })}
+              </div>
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                {soldOut
+                  ? "Sin stock en este color"
+                  : selected
+                    ? `${selected.stock} disponible${selected.stock === 1 ? "" : "s"}`
+                    : ""}
+              </p>
+            </div>
+          )}
+
           <div className="mt-8 flex items-center gap-3">
             <span className="text-[10px] tracking-wide-editorial uppercase text-muted-foreground">
               Cantidad
@@ -81,7 +145,7 @@ function ProductPage() {
               >−</button>
               <span className="px-4 text-sm">{qty}</span>
               <button
-                onClick={() => setQty(Math.min(99, qty + 1))}
+                onClick={() => setQty(Math.min(maxQty, qty + 1))}
                 className="px-3 py-2 hover:bg-muted"
                 aria-label="Sumar"
               >+</button>
@@ -90,10 +154,10 @@ function ProductPage() {
 
           <button
             onClick={() => m.mutate()}
-            disabled={!sessionId || m.isPending}
+            disabled={!sessionId || m.isPending || soldOut}
             className="mt-8 bg-foreground text-background px-8 py-4 text-[11px] tracking-wide-editorial uppercase hover:bg-rose-bright hover:text-rose-bright-foreground transition-colors disabled:opacity-60"
           >
-            {m.isPending ? "Agregando…" : "Agregar al carrito"}
+            {soldOut ? "Agotado" : m.isPending ? "Agregando…" : "Agregar al carrito"}
           </button>
 
           <button

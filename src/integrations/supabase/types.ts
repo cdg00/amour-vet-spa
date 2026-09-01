@@ -21,6 +21,7 @@ export type Database = {
           product_id: string
           qty: number
           session_id: string
+          variant_id: string | null
         }
         Insert: {
           created_at?: string
@@ -28,6 +29,7 @@ export type Database = {
           product_id: string
           qty?: number
           session_id: string
+          variant_id?: string | null
         }
         Update: {
           created_at?: string
@@ -35,6 +37,7 @@ export type Database = {
           product_id?: string
           qty?: number
           session_id?: string
+          variant_id?: string | null
         }
         Relationships: [
           {
@@ -42,6 +45,13 @@ export type Database = {
             columns: ["product_id"]
             isOneToOne: false
             referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "cart_items_variant_id_fkey"
+            columns: ["variant_id"]
+            isOneToOne: false
+            referencedRelation: "product_variants"
             referencedColumns: ["id"]
           },
         ]
@@ -78,6 +88,44 @@ export type Database = {
           total?: number
         }
         Relationships: []
+      }
+      product_variants: {
+        Row: {
+          active: boolean
+          color: string
+          color_hex: string | null
+          created_at: string
+          id: string
+          product_id: string
+          stock: number
+        }
+        Insert: {
+          active?: boolean
+          color: string
+          color_hex?: string | null
+          created_at?: string
+          id?: string
+          product_id: string
+          stock?: number
+        }
+        Update: {
+          active?: boolean
+          color?: string
+          color_hex?: string | null
+          created_at?: string
+          id?: string
+          product_id?: string
+          stock?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_variants_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       products: {
         Row: {
@@ -141,7 +189,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      decrement_variant_stock: {
+        Args: { _qty: number; _variant_id: string }
+        Returns: number
+      }
     }
     Enums: {
       product_category:

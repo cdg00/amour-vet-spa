@@ -2,6 +2,13 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
+export type Variant = {
+  id: string;
+  color: string;
+  color_hex: string | null;
+  stock: number;
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -11,6 +18,7 @@ export type Product = {
   stock: number;
   featured: boolean;
   image_url: string | null;
+  variants?: Variant[];
 };
 
 const SELECT = "id,name,category,price,description,stock,featured,image_url";
@@ -45,10 +53,24 @@ export const getProduct = createServerFn({ method: "GET" })
   .handler(async ({ data }) => {
     const { data: row, error } = await supabaseAdmin
       .from("products")
-      .select(SELECT)
+      .select(
+        SELECT +
+          ",product_variants(id,color,color_hex,stock,active)",
+      )
       .eq("id", data.id)
       .eq("active", true)
       .maybeSingle();
     if (error) throw new Error(error.message);
-    return row as Product | null;
+    if (!row) return null;
+    const r = row as any;
+    const variants = ((r.product_variants ?? []) as any[])
+      .filter((v) => v.active)
+      .map((v) => ({
+        id: v.id,
+        color: v.color,
+        color_hex: v.color_hex,
+        stock: v.stock,
+      }));
+    delete r.product_variants;
+    return { ...r, variants } as Product;
   });
