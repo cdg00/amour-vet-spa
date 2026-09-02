@@ -133,6 +133,14 @@ function ProductPage() {
             </div>
           )}
 
+          {!showColors && selected && (
+            <p className="mt-6 text-[11px] text-muted-foreground">
+              {soldOut
+                ? "Sin stock"
+                : `${selected.stock} disponible${selected.stock === 1 ? "" : "s"}`}
+            </p>
+          )}
+
           <div className="mt-8 flex items-center gap-3">
             <span className="text-[10px] tracking-wide-editorial uppercase text-muted-foreground">
               Cantidad
