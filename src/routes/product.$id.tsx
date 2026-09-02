@@ -52,7 +52,7 @@ function ProductPage() {
     return (
       <div className="pt-32 pb-24 text-center">
         <p className="text-muted-foreground">Producto no encontrado.</p>
-        <Link to="/shop" className="mt-4 inline-block underline text-rose-bright">Volver a la tienda</Link>
+        <Link to="/" className="mt-4 inline-block underline text-rose-bright">Volver a la tienda</Link>
       </div>
     );
   }

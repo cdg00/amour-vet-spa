@@ -24,7 +24,7 @@ export default function FeaturedProducts() {
             </h2>
           </div>
           <Link
-            to="/shop"
+            to="/"
             className="hidden sm:inline-block text-[11px] tracking-wide-editorial uppercase text-foreground/70 hover:text-rose-bright border-b border-foreground/30 pb-1"
           >
             Ver todo
