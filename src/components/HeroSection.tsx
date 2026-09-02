@@ -52,7 +52,7 @@ export default function HeroSection() {
           className="mt-10"
         >
           <Link
-            to="/shop"
+            to="/"
             className="inline-block border border-background bg-background/10 backdrop-blur-sm px-10 py-3.5 text-[11px] tracking-wide-editorial uppercase text-background transition-all hover:bg-background hover:text-foreground"
           >
             Ver Colección

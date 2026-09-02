@@ -44,7 +44,7 @@ export default function Header() {
           {CATEGORIES.map((c) => (
             <Link
               key={c.slug}
-              to="/shop"
+              to="/"
               search={{ category: c.slug }}
               className="text-[11px] tracking-wide-editorial uppercase text-foreground/70 hover:text-rose-bright transition-colors"
             >
@@ -94,7 +94,7 @@ export default function Header() {
               {CATEGORIES.map((c) => (
                 <li key={c.slug}>
                   <Link
-                    to="/shop"
+                    to="/"
                     search={{ category: c.slug }}
                     onClick={() => setOpen(false)}
                     className="block py-2 text-xs tracking-wide-editorial uppercase text-foreground/70 hover:text-rose-bright"

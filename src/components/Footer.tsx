@@ -22,7 +22,7 @@ export default function Footer() {
               {CATEGORIES.slice(0, 5).map((c) => (
                 <li key={c.slug}>
                   <Link
-                    to="/shop"
+                    to="/"
                     search={{ category: c.slug }}
                     className="text-xs text-muted-foreground hover:text-rose-bright transition-colors"
                   >

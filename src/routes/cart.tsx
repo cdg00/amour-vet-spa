@@ -110,7 +110,7 @@ function CartPage() {
         <div className="text-center py-16">
           <p className="text-muted-foreground">Tu carrito está vacío.</p>
           <Link
-            to="/shop"
+            to="/"
             className="mt-6 inline-block border border-foreground px-6 py-3 text-[11px] tracking-wide-editorial uppercase hover:bg-foreground hover:text-background transition-colors"
           >
             Ir a la tienda

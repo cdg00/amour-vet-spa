@@ -25,7 +25,7 @@ export default function CategoryGrid() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
             >
               <Link
-                to="/shop"
+                to="/"
                 search={{ category: c.slug }}
                 className="group block"
               >
