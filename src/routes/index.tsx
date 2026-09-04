@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import ShopCatalog from "@/components/ShopCatalog";
+import HeroSection from "@/components/HeroSection";
 
 const search = z.object({
   category: z.string().optional(),
@@ -23,5 +24,12 @@ export const Route = createFileRoute("/")({
 
 function HomeShopPage() {
   const { category } = Route.useSearch();
-  return <ShopCatalog category={category} />;
+  return (
+    <>
+      <HeroSection />
+      <div id="catalogo">
+        <ShopCatalog category={category} />
+      </div>
+    </>
+  );
 }
