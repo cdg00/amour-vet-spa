@@ -139,24 +139,24 @@ export const PRODUCTS: ProductData[] = [
     id: "90cc8082-1ab3-4ed1-b023-2e5b3fa2e34b",
     name: "Conjunto de encaje negro (talle 90)",
     category: "lenceria",
-    price: 11000,
+    price: 19000,
     image: "/products/lenceria-encaje-negro-90.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "6b2a814f-9c19-4e7e-8b69-80df6b8ec01a", color: "Único", colorHex: null, stock: 10, active: true },
+      { id: "6b2a814f-9c19-4e7e-8b69-80df6b8ec01a", color: "Negro (Talle 90)", colorHex: "#111111", stock: 1, active: true },
     ],
   },
   {
     id: "db31e738-14aa-4a81-afe3-2c6ab4b19110",
-    name: "Conjunto de encaje (color crema, talle 90)",
+    name: "Conjunto de encaje crema (talle 90)",
     category: "lenceria",
-    price: 11100,
+    price: 19000,
     image: "/products/lenceria-encaje-crema-90.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "5e099098-e34e-4160-9eb9-91f3b589f0a2", color: "Único", colorHex: null, stock: 10, active: true },
+      { id: "5e099098-e34e-4160-9eb9-91f3b589f0a2", color: "Crema (Talle 90)", colorHex: "#F3E9D7", stock: 1, active: true },
     ],
   },
   {
@@ -197,14 +197,14 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "f4a78303-958f-4137-a95a-393ddb8f9615",
-    name: "Conjunto blanco con encaje (talle XL/4)",
+    name: "Conjunto blanco de encaje (talle 4)",
     category: "lenceria",
-    price: 10500,
+    price: 19500,
     image: "/products/lenceria-blanco-encaje-xl.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "b22e1466-22c6-413c-8a4f-1e675c9e043b", color: "Único", colorHex: null, stock: 10, active: true },
+      { id: "b22e1466-22c6-413c-8a4f-1e675c9e043b", color: "Blanco (Talle 4)", colorHex: "#FFFFFF", stock: 1, active: true },
     ],
   },
   {
@@ -257,14 +257,14 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "8b5835bf-40ba-4f7b-9ca9-4bb0d53520c4",
-    name: "Conjunto con aro y encaje (color rosa, talle 90)",
+    name: "Conjunto con aro y encaje rosa (talle 90)",
     category: "lenceria",
-    price: 11000,
+    price: 20000,
     image: "/products/lenceria-rosa-aro-90.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "da492e87-b7da-4712-86c7-f3d060f4a100", color: "Único", colorHex: null, stock: 10, active: true },
+      { id: "da492e87-b7da-4712-86c7-f3d060f4a100", color: "Rosa (Talle 90)", colorHex: "#F4C2C2", stock: 1, active: true },
     ],
   },
   {
@@ -283,12 +283,12 @@ export const PRODUCTS: ProductData[] = [
     id: "e54ab6fc-f0f0-40d6-a126-30ac123ed00b",
     name: "Conjunto bordó de algodón con encaje (talle 95)",
     category: "lenceria",
-    price: 9000,
+    price: 19000,
     image: "/products/lenceria-bordo-95.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "6241dbea-0b7a-48be-9f53-53910d952f36", color: "Único", colorHex: null, stock: 10, active: true },
+      { id: "6241dbea-0b7a-48be-9f53-53910d952f36", color: "Bordó (Talle 95)", colorHex: "#6D071A", stock: 1, active: true },
     ],
   },
   {
@@ -307,12 +307,12 @@ export const PRODUCTS: ProductData[] = [
     id: "7ff361c9-aaf1-4182-bb85-c4b451b074c1",
     name: "Conjunto de cebra (talle 90)",
     category: "lenceria",
-    price: 10000,
+    price: 18000,
     image: "/products/lenceria-cebra-90.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "af43d35f-e8fc-45dd-8aa5-7c9302b4ab94", color: "Único", colorHex: null, stock: 9, active: true },
+      { id: "af43d35f-e8fc-45dd-8aa5-7c9302b4ab94", color: "Estampado Cebra (Talle 90)", colorHex: null, stock: 1, active: true },
     ],
   },
   {
@@ -331,12 +331,12 @@ export const PRODUCTS: ProductData[] = [
     id: "a1773565-eb1b-4a80-819b-cf7413015437",
     name: "Conjunto gris armado (talle 90)",
     category: "lenceria",
-    price: 14500,
+    price: 18000,
     image: "/products/lenceria-gris-armado-90.jpeg",
     featured: true,
     active: true,
     variants: [
-      { id: "1788ac11-75e7-4531-b467-9e10df57feeb", color: "Único", colorHex: null, stock: 9, active: true },
+      { id: "1788ac11-75e7-4531-b467-9e10df57feeb", color: "Gris (Talle 90)", colorHex: "#9CA3AF", stock: 1, active: true },
     ],
   },
   {
