@@ -71,13 +71,14 @@ function CartPage() {
         `${lines}\n\n` +
         `Total a pagar: ${formatARS(res.total)}\n\n` +
         `Mis datos:\n` +
-        `${name ? `Nombre: ${name}\n` : ""}` +
+        `Nombre y Apellido: ${name}\n` +
         `Teléfono: ${phone}\n` +
         `${address ? `Dirección/Entrega: ${address}\n` : ""}` +
         `\nDatos bancarios para transferencia:\n` +
         `Alias: ${BANK.alias}\n` +
         `Titular: ${BANK.holder}\n\n` +
-        `Una vez realizada la transferencia, envío el comprobante por este chat para confirmar la compra.`;
+        `IMPORTANTE: Es obligatorio enviar el comprobante de transferencia a este chat de WhatsApp para confirmar el pedido.\n\n` +
+        `Entregas: Hacemos envíos en Barker, Villa Cacique y Tandil y coordinamos un punto de entrega. Para los demás lugares todavía no está disponible o el envío corre por cuenta de un comisionista.`;
       window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
     },
     onError: (e) => toast.error(e.message ?? "No se pudo finalizar"),
@@ -91,6 +92,7 @@ function CartPage() {
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
+    if (!name.trim()) return toast.error("Ingresá tu nombre y apellido");
     const r = phoneSchema.safeParse(phone);
     if (!r.success) return toast.error(r.error.issues[0]?.message ?? "Teléfono inválido");
     if (items.length === 0) return toast.error("El carrito está vacío");
@@ -180,9 +182,10 @@ function CartPage() {
             <form onSubmit={submit} className="mt-6 space-y-3">
               <input
                 type="text"
-                placeholder="Tu nombre (opcional)"
+                placeholder="Nombre y Apellido"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
                 className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
               />
               <input
@@ -203,6 +206,12 @@ function CartPage() {
               />
               <p className="text-[11px] text-muted-foreground">
                 Pago por transferencia — Alias: {BANK.alias} · Titular: {BANK.holder}
+              </p>
+              <p className="text-[11px] text-muted-foreground">
+                Es obligatorio enviar el comprobante de transferencia al chat de WhatsApp para confirmar el pedido.
+              </p>
+              <p className="text-[11px] text-muted-foreground">
+                Entregas: hacemos envíos en Barker, Villa Cacique y Tandil y coordinamos un punto de entrega. Para los demás lugares todavía no está disponible o el envío corre por cuenta de un comisionista.
               </p>
               <button
                 type="submit"
