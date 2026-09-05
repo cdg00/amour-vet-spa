@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Link } from "@tanstack/react-router";
 import { listProducts } from "@/lib/products.functions";
 import ProductCard from "@/components/ProductCard";
 import { CATEGORIES, categoryLabel } from "@/lib/categories";
@@ -9,12 +9,29 @@ interface ShopCatalogProps {
   category?: string;
 }
 
-export default function ShopCatalog({ category }: ShopCatalogProps) {
+export default function ShopCatalog({ category: initialCategory }: ShopCatalogProps) {
+  const [category, setCategory] = useState<string | undefined>(initialCategory);
+
+  useEffect(() => {
+    setCategory(initialCategory);
+  }, [initialCategory]);
+
   const fetchProducts = useServerFn(listProducts);
   const { data, isLoading } = useQuery({
-    queryKey: ["products", category ?? "all"],
-    queryFn: () => fetchProducts({ data: { category } }),
+    queryKey: ["products", "all"],
+    queryFn: () => fetchProducts({ data: {} }),
   });
+
+  const products = (data ?? []).filter(
+    (p) => !category || p.category === category
+  );
+
+  const filterClass = (active: boolean) =>
+    `px-4 py-2 text-[10px] tracking-wide-editorial uppercase border transition-colors cursor-pointer ${
+      active
+        ? "bg-foreground text-background border-foreground"
+        : "border-border text-foreground/70 hover:border-rose-bright hover:text-rose-bright"
+    }`;
 
   return (
     <div className="pt-32 pb-24 mx-auto max-w-7xl px-6">
@@ -26,29 +43,22 @@ export default function ShopCatalog({ category }: ShopCatalogProps) {
       </div>
 
       <div className="flex flex-wrap justify-center gap-2 mb-12">
-        <Link
-          to="/"
-          className={`px-4 py-2 text-[10px] tracking-wide-editorial uppercase border transition-colors ${
-            !category
-              ? "bg-foreground text-background border-foreground"
-              : "border-border text-foreground/70 hover:border-rose-bright hover:text-rose-bright"
-          }`}
+        <button
+          type="button"
+          onClick={() => setCategory(undefined)}
+          className={filterClass(!category)}
         >
-          Todo
-        </Link>
+          Ver Todo
+        </button>
         {CATEGORIES.map((c) => (
-          <Link
+          <button
             key={c.slug}
-            to="/"
-            search={{ category: c.slug }}
-            className={`px-4 py-2 text-[10px] tracking-wide-editorial uppercase border transition-colors ${
-              category === c.slug
-                ? "bg-foreground text-background border-foreground"
-                : "border-border text-foreground/70 hover:border-rose-bright hover:text-rose-bright"
-            }`}
+            type="button"
+            onClick={() => setCategory(c.slug)}
+            className={filterClass(category === c.slug)}
           >
             {c.label}
-          </Link>
+          </button>
         ))}
       </div>
 
@@ -58,11 +68,11 @@ export default function ShopCatalog({ category }: ShopCatalogProps) {
             <div key={i} className="aspect-[4/5] bg-muted animate-pulse" />
           ))}
         </div>
-      ) : (data ?? []).length === 0 ? (
+      ) : products.length === 0 ? (
         <p className="text-center text-muted-foreground">No hay productos en esta categoría.</p>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
-          {(data ?? []).map((p) => (
+          {products.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
