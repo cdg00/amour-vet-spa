@@ -621,66 +621,6 @@ export const PRODUCTS: ProductData[] = [
       { id: "ea630ffd-12f7-4fe3-b1a0-26fa41cf8cfd", color: "Único", colorHex: null, stock: 10, active: true },
     ],
   },
-  {
-    id: "af409581-7646-41fe-83b8-fa3c4d9e600e",
-    name: "Bufanda (chocolate)",
-    category: "accesorios",
-    price: 9500,
-    image: "/products/bufanda-chocolate.jpeg",
-    featured: false,
-    active: true,
-    variants: [
-      { id: "e8895d19-c4f4-417b-99e9-2046e7c7c5e2", color: "Único", colorHex: null, stock: 10, active: true },
-    ],
-  },
-  {
-    id: "91f30255-74b9-4141-b39a-7ec37317faa4",
-    name: "Bufanda (gris)",
-    category: "accesorios",
-    price: 9500,
-    image: "/products/bufanda-gris.jpeg",
-    featured: false,
-    active: true,
-    variants: [
-      { id: "61f67569-d105-42d8-aec9-7ac86ba69a23", color: "Único", colorHex: null, stock: 10, active: true },
-    ],
-  },
-  {
-    id: "fe6c9233-fcca-4bac-9b96-71c72e98417c",
-    name: "Bufanda (negra)",
-    category: "accesorios",
-    price: 9500,
-    image: "/products/bufanda-negra.jpeg",
-    featured: false,
-    active: true,
-    variants: [
-      { id: "26838cbd-91cf-428f-8135-210056fe8688", color: "Único", colorHex: null, stock: 10, active: true },
-    ],
-  },
-  {
-    id: "018b0ed9-6e87-4db3-a145-ae8996a539ac",
-    name: "Cuellitos",
-    category: "accesorios",
-    price: 3000,
-    image: "/products/cuellitos.jpeg",
-    featured: false,
-    active: true,
-    variants: [
-      { id: "12a9ccfa-2565-48f9-a351-9fe712ee1fde", color: "Único", colorHex: null, stock: 20, active: true },
-    ],
-  },
-  {
-    id: "3a9515f8-f5e8-4ba2-93e3-aef60d71c280",
-    name: "Ruana",
-    category: "accesorios",
-    price: 15000,
-    image: "/products/ruana.jpeg",
-    featured: false,
-    active: true,
-    variants: [
-      { id: "41db71be-7281-445b-bc2d-5bc16e49e8df", color: "Único", colorHex: null, stock: 9, active: true },
-    ],
-  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(
