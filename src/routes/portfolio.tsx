@@ -9,6 +9,8 @@ export const Route = createFileRoute("/portfolio")({
       { name: "description", content: "Portafolio de contenido UGC de Camila Gómez. Videos orgánicos y auténticos para marcas de moda, belleza y lifestyle." },
       { property: "og:title", content: "Camila Gómez · UGC Content Creator" },
       { property: "og:description", content: "Portafolio UGC. Conectá con tu audiencia a través de contenido auténtico." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PortfolioPage,

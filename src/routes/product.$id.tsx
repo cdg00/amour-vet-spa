@@ -10,6 +10,14 @@ import { formatARS } from "@/lib/contact";
 import { useSessionId } from "@/hooks/use-session-id";
 
 export const Route = createFileRoute("/product/$id")({
+  head: ({ params }) => ({ meta: [
+    { title: `Producto ${params.id} · Fashion Intimate` },
+    { name: "description", content: "Elegí tu lencería, indumentaria y accesorios en Fashion Íntima." },
+    { property: "og:title", content: `Producto ${params.id} · Fashion Intimate` },
+    { property: "og:description", content: "Elegí tu lencería, indumentaria y accesorios en Fashion Íntima." },
+    { property: "og:type", content: "product" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
   component: ProductPage,
 });
 

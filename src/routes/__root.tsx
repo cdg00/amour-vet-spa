@@ -32,10 +32,6 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Fashion Intimate · Lencería" },
-      { name: "description", content: "Lencería, bombachas, medias, maquillaje y accesorios. Diseño íntimo de calidad. Envíos desde Tandil." },
-      { property: "og:title", content: "Fashion Intimate · Lencería" },
-      { property: "og:description", content: "Diseño íntimo, calce perfecto. Una colección curada para vos." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
