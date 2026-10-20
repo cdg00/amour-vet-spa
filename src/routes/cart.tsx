@@ -16,7 +16,14 @@ import { formatARS, whatsappLink, BANK } from "@/lib/contact";
 import { useSessionId } from "@/hooks/use-session-id";
 
 export const Route = createFileRoute("/cart")({
-  head: () => ({ meta: [{ title: "Carrito · Fashion Intimate" }] }),
+  head: () => ({ meta: [
+    { title: "Carrito · Fashion Intimate" },
+    { name: "description", content: "Tu pedido de lencería, indumentaria y accesorios en Fashion Íntima." },
+    { property: "og:title", content: "Carrito · Fashion Intimate" },
+    { property: "og:description", content: "Tu pedido de lencería, indumentaria y accesorios en Fashion Íntima." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
   component: CartPage,
 });
 
