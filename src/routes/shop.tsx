@@ -10,7 +10,7 @@ export const Route = createFileRoute("/shop")({
   validateSearch: search,
   head: () => ({
     meta: [
-      { title: "Tienda · Fashion Intimate" },
+      { title: "Fashion Íntima - Tienda de Lencería · Catálogo" },
       { name: "description", content: "Catálogo oficial de Fashion Íntima. Lencería, indumentaria y accesorios." },
       { property: "og:title", content: "Fashion Íntima - Tienda de Lencería" },
       { property: "og:description", content: "Catálogo oficial de Fashion Íntima. Lencería, indumentaria y accesorios." },
