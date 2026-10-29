@@ -11,6 +11,14 @@ export const PRODUCT_GALLERY: Record<string, string[]> = {
     "/products/medias-34-elemento-2.jpeg",
     "/products/medias-34-elemento-3.jpeg",
   ],
+  // Bóxer de algodón — 5 fotos
+  "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e15": [
+    "/products/boxer-azul-3xl.png",
+    "/products/boxer-negro-3xl.png",
+    "/products/boxer-blanco-3xl.png",
+    "/products/boxer-azul-l.png",
+    "/products/boxer-gris-oscuro-l.png",
+  ],
 };
 
 export function galleryFor(productId: string, fallback: string): string[] {

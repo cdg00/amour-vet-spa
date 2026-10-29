@@ -8,6 +8,7 @@ import { addToCart } from "@/lib/cart.functions";
 import { CATEGORY_IMAGE, type CategorySlug, categoryLabel } from "@/lib/categories";
 import { formatARS } from "@/lib/contact";
 import { useSessionId } from "@/hooks/use-session-id";
+import { galleryFor } from "@/lib/product-gallery";
 
 export const Route = createFileRoute("/product/$id")({
   head: ({ params }) => ({ meta: [
@@ -80,8 +81,17 @@ function ProductPage() {
   return (
     <div className="pt-28 pb-24 mx-auto max-w-6xl px-6">
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
-        <div className="aspect-[4/5] overflow-hidden bg-muted">
-          <img src={img} alt={product.name} className="h-full w-full object-cover" />
+        <div>
+          <div className="flex snap-x snap-mandatory overflow-x-auto">
+            {galleryFor(product.id, img).map((src, i) => (
+              <div key={src} className="aspect-[4/5] w-full shrink-0 snap-center overflow-hidden bg-muted">
+                <img src={src} alt={`${product.name} ${i + 1}`} className="h-full w-full object-cover" />
+              </div>
+            ))}
+          </div>
+          {galleryFor(product.id, img).length > 1 && (
+            <p className="mt-2 text-center text-xs text-muted-foreground">Deslizá para ver más fotos →</p>
+          )}
         </div>
         <div className="flex flex-col justify-center">
           <p className="text-[10px] tracking-wide-editorial uppercase text-rose-bright">
