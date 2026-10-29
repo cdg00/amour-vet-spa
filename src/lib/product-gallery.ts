@@ -26,6 +26,11 @@ export const PRODUCT_GALLERY: Record<string, string[]> = {
     "/products/boxer-uomo-azul.jpeg",
     "/products/boxer-uomo-rojo.jpeg",
   ],
+  // Slip — 2 fotos
+  "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e30": [
+    "/products/slip-rojo-2xl.jpeg",
+    "/products/slip-negro-2xl.jpeg",
+  ],
 };
 
 export function galleryFor(productId: string, fallback: string): string[] {
