@@ -652,6 +652,19 @@ export const PRODUCTS: ProductData[] = [
       { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e22", color: "Rojo con azul · M", colorHex: "#DC2626", stock: 1, active: true },
     ],
   },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e30",
+    name: "Slip",
+    category: "boxers",
+    price: 4000,
+    image: "/products/slip-rojo-2xl.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e31", color: "Rojo · 2XL", colorHex: "#DC2626", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e32", color: "Negro · 2XL", colorHex: "#111111", stock: 1, active: true },
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(
