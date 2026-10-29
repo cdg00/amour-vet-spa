@@ -621,6 +621,24 @@ export const PRODUCTS: ProductData[] = [
       { id: "ea630ffd-12f7-4fe3-b1a0-26fa41cf8cfd", color: "Único", colorHex: null, stock: 10, active: true },
     ],
   },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e15",
+    name: "Bóxer de algodón",
+    category: "boxers",
+    price: 6000,
+    image: "/products/boxer-azul-3xl.png",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "08f5e52b-7f66-4338-bc38-1a60d7bc94bb", color: "Azul · 3XL", colorHex: "#1E3A8A", stock: 1, active: true },
+      { id: "fffc3cf3-b2b3-4f94-99c7-30dbb4b7ac3d", color: "Azul · L", colorHex: "#1E3A8A", stock: 1, active: true },
+      { id: "438682d7-6ca5-487e-aa01-1631851ed579", color: "Blanco · 3XL", colorHex: "#FFFFFF", stock: 1, active: true },
+      { id: "df60a895-7ab4-4b8c-9981-95041a4e098c", color: "Gris oscuro · L", colorHex: "#374151", stock: 1, active: true },
+      { id: "0baa4dc9-0952-473d-ac21-918f2bb21477", color: "Negro · 3XL", colorHex: "#111111", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e16", color: "Rojo · XL", colorHex: "#DC2626", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e17", color: "Gris · 2XL", colorHex: "#9CA3AF", stock: 1, active: true },
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(
