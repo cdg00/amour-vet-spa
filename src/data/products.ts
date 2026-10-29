@@ -639,6 +639,19 @@ export const PRODUCTS: ProductData[] = [
       { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e17", color: "Gris · 2XL", colorHex: "#9CA3AF", stock: 1, active: true },
     ],
   },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e20",
+    name: "Bóxer uomo",
+    category: "boxers",
+    price: 4000,
+    image: "/products/boxer-uomo-azul.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e21", color: "Azul con azul · M", colorHex: "#1E3A8A", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e22", color: "Rojo con azul · M", colorHex: "#DC2626", stock: 1, active: true },
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(

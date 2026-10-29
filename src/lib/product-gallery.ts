@@ -21,6 +21,11 @@ export const PRODUCT_GALLERY: Record<string, string[]> = {
     "/products/boxer-rojo-xl.jpeg",
     "/products/boxer-gris-2xl.jpeg",
   ],
+  // Bóxer uomo — 2 fotos
+  "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e20": [
+    "/products/boxer-uomo-azul.jpeg",
+    "/products/boxer-uomo-rojo.jpeg",
+  ],
 };
 
 export function galleryFor(productId: string, fallback: string): string[] {
