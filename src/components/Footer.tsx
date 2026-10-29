@@ -24,6 +24,7 @@ export default function Footer() {
                   <Link
                     to="/"
                     search={{ category: c.slug }}
+                    hash="catalogo"
                     className="text-xs text-muted-foreground hover:text-rose-bright transition-colors"
                   >
                     {c.label}

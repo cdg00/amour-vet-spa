@@ -27,6 +27,7 @@ export default function CategoryGrid() {
               <Link
                 to="/"
                 search={{ category: c.slug }}
+                hash="catalogo"
                 className="group block"
               >
                 <div className="relative aspect-square overflow-hidden bg-muted">
