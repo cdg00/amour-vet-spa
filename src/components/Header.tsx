@@ -46,6 +46,7 @@ export default function Header() {
               key={c.slug}
               to="/"
               search={{ category: c.slug }}
+              hash="catalogo"
               className="text-[11px] tracking-wide-editorial uppercase text-foreground/70 hover:text-rose-bright transition-colors"
             >
               {c.label}
@@ -96,6 +97,7 @@ export default function Header() {
                   <Link
                     to="/"
                     search={{ category: c.slug }}
+                    hash="catalogo"
                     onClick={() => setOpen(false)}
                     className="block py-2 text-xs tracking-wide-editorial uppercase text-foreground/70 hover:text-rose-bright"
                   >

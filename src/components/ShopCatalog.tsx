@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { listProducts } from "@/lib/products.functions";
@@ -11,9 +11,16 @@ interface ShopCatalogProps {
 
 export default function ShopCatalog({ category: initialCategory }: ShopCatalogProps) {
   const [category, setCategory] = useState<string | undefined>(initialCategory);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const lastProp = useRef(initialCategory);
 
   useEffect(() => {
     setCategory(initialCategory);
+    if (lastProp.current === initialCategory) return;
+    lastProp.current = initialCategory;
+    requestAnimationFrame(() => {
+      wrapRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   }, [initialCategory]);
 
   const fetchProducts = useServerFn(listProducts);
@@ -34,7 +41,7 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
     }`;
 
   return (
-    <div className="pt-32 pb-24 mx-auto max-w-7xl px-6">
+    <div ref={wrapRef} className="pt-32 pb-24 mx-auto max-w-7xl px-6">
       <div className="text-center mb-12">
         <p className="text-[11px] tracking-wide-editorial uppercase text-rose-bright">Tienda</p>
         <h1 className="mt-3 font-serif text-4xl md:text-5xl text-foreground">
