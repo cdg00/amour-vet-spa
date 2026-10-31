@@ -490,30 +490,6 @@ export const PRODUCTS: ProductData[] = [
     ],
   },
   {
-    id: "0979f7e2-3a42-47e9-881d-2d8404c71f36",
-    name: "Rímel con ácido hialurónico",
-    category: "maquillaje",
-    price: 4000,
-    image: "/products/maq-rimel-hialuronico.jpeg",
-    featured: true,
-    active: true,
-    variants: [
-      { id: "40f78dc7-f135-41ff-846a-59a301bcb40e", color: "Único", colorHex: null, stock: 10, active: true },
-    ],
-  },
-  {
-    id: "8c415b14-6f0f-45ae-981f-19115694e68c",
-    name: "Sérum (de frutilla)",
-    category: "maquillaje",
-    price: 9000,
-    image: "/products/maq-serum-frutilla.jpeg",
-    featured: true,
-    active: true,
-    variants: [
-      { id: "d610df32-28cb-4fba-904b-4e5cc260a200", color: "Único", colorHex: null, stock: 10, active: true },
-    ],
-  },
-  {
     id: "f2dbd7e8-0661-490b-8437-e68743ef9d53",
     name: "Toallitas desmaquillantes",
     category: "maquillaje",
