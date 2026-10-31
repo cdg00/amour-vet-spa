@@ -262,7 +262,7 @@ export const PRODUCTS: ProductData[] = [
     price: 3300,
     image: "/products/colaless-xl-roja.jpeg",
     featured: false,
-    active: true,
+    active: false,
     variants: [
       { id: "6e225fc7-a81a-4f16-9004-ec7ae061ca42", color: "Rojo", colorHex: null, stock: 2, active: true },
     ],
@@ -274,7 +274,7 @@ export const PRODUCTS: ProductData[] = [
     price: 4800,
     image: "/products/colaless-3xl-a.jpeg",
     featured: false,
-    active: true,
+    active: false,
     variants: [
       { id: "c331f6c5-2e91-42c2-8dbd-6e9ec704486a", color: "Beige", colorHex: null, stock: 1, active: true },
       { id: "dbf076fd-0a9b-4794-a32f-31a93864c6de", color: "Blanco", colorHex: null, stock: 1, active: true },
@@ -321,7 +321,7 @@ export const PRODUCTS: ProductData[] = [
     price: 3000,
     image: "/products/colaless-mono-blanca.jpeg",
     featured: false,
-    active: true,
+    active: false,
     variants: [
       { id: "1643f4d2-c401-477d-a669-e0cf41505eff", color: "Blanco", colorHex: null, stock: 2, active: true },
     ],
