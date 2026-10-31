@@ -1,0 +1,3 @@
+- [x] Quitar las cola less de moño blanca, algodón 3XL y talle XL de la lista local.
+- [x] Mostrar Bombachas en una grilla hacia abajo, sin cambiar otras categorías.
+- [ ] Confirmar las bajas en el catálogo y comprobar la vista de Bombachas.

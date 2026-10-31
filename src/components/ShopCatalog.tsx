@@ -77,7 +77,7 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
         </div>
       ) : products.length === 0 ? (
         <p className="text-center text-muted-foreground">No hay productos en esta categoría.</p>
-      ) : category ? (
+      ) : category && category !== "bombachas" ? (
         <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:thin]">
           {products.map((p) => (
             <div key={p.id} className="w-64 sm:w-72 shrink-0 snap-start">
