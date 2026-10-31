@@ -503,7 +503,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e40",
-    name: "Cartuchera tejida blanca",
+    name: "Neceser tejido blanco",
     category: "accesorios",
     price: 12000,
     image: "/products/cartuchera-tejida-blanca.jpeg",
@@ -515,7 +515,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e50",
-    name: "Cartuchera animal print",
+    name: "Neceser animal print",
     category: "accesorios",
     price: 12000,
     image: "/products/cartuchera-animal-print.jpeg",
