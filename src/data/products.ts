@@ -609,7 +609,7 @@ export const PRODUCTS: ProductData[] = [
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e70",
     name: "Cancán semiopaco (talle 1)",
-    category: "medias",
+    category: "accesorios",
     price: 4000,
     image: "/products/cancan-semiopaca.jpeg",
     featured: false,
