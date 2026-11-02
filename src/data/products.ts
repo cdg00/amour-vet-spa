@@ -569,6 +569,61 @@ export const PRODUCTS: ProductData[] = [
       { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e32", color: "Negro · 2XL", colorHex: "#111111", stock: 1, active: true },
     ],
   },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e60",
+    name: "Cuellito de lycra",
+    category: "accesorios",
+    price: 5000,
+    image: "/products/cuellito-lycra.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e61", color: "Único", colorHex: null, stock: 3, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e70",
+    name: "Cancán semiopaco (talle 1)",
+    category: "medias",
+    price: 4000,
+    image: "/products/cancan-semiopaca.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e71", color: "Único", colorHex: null, stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e80",
+    name: "Bóxer de nene",
+    category: "boxers",
+    price: 3000,
+    image: "/products/boxer-nene.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e81", color: "Dragon Ball · 12", colorHex: null, stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e82", color: "Spiderman · 12", colorHex: null, stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e83", color: "Naruto · 16", colorHex: null, stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e90",
+    name: "Bombachas de nena",
+    category: "bombachas",
+    price: 3200,
+    image: "/products/bombachas-nena.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e91", color: "Beige · 1", colorHex: "#E3D5C3", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e92", color: "Azul · 2", colorHex: "#1E40AF", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e93", color: "Rosa · 2", colorHex: "#F4B6C2", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e94", color: "Rojo · 3", colorHex: "#C1121F", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e95", color: "Lila · 3", colorHex: "#B9A9D9", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e96", color: "Beige · 3", colorHex: "#E3D5C3", stock: 1, active: true },
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(
