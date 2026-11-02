@@ -2,3 +2,4 @@
 - [x] Mostrar Bombachas en una grilla hacia abajo, sin cambiar otras categorías.
 - [x] Confirmar las bajas en el catálogo y comprobar la vista de Bombachas.
 - [x] Pegar la foto subida a "Cola less de algodón tira ancha" y comprobarla en la ficha y en Bombachas.
+- [x] Agregar "Brochas" ($3.000, 1 unidad) y "Lip oil" ($3.000, 1 unidad) a Maquillaje con sus fotos.
