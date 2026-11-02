@@ -649,6 +649,44 @@ export const PRODUCTS: ProductData[] = [
       { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e96", color: "Beige · 3", colorHex: "#E3D5C3", stock: 1, active: true },
     ],
   },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ec0",
+    name: "Cola less de algodón 2XL",
+    category: "bombachas",
+    price: 4900,
+    image: "/products/colaless-algodon-2xl.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ec1", color: "Chocolate · 2XL", colorHex: "#5C3A21", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ec2", color: "Chocolate claro · 2XL", colorHex: "#A9744F", stock: 1, active: true },
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ec3", color: "Natural · 2XL", colorHex: "#E3D5C3", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ed0",
+    name: "Conjunto negro texturado",
+    category: "lenceria",
+    price: 14000,
+    image: "/products/conjunto-negro-100.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ed1", color: "Negro · 100", colorHex: "#111111", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ee0",
+    name: "Conjunto blanco de encaje",
+    category: "lenceria",
+    price: 9000,
+    image: "/products/conjunto-blanco-encaje-100.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ee1", color: "Blanco · 100", colorHex: "#FFFFFF", stock: 1, active: true },
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(
