@@ -502,6 +502,31 @@ export const PRODUCTS: ProductData[] = [
     ],
   },
   {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ea0",
+    name: "Brochas",
+    category: "maquillaje",
+    price: 3000,
+    image: "/products/brochas-maquillaje.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ea1", color: "Único", colorHex: null, stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7eb0",
+    name: "Lip oil",
+    category: "maquillaje",
+    price: 3000,
+    image: "/products/lip-oil-gloss.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7eb1", color: "Único", colorHex: null, stock: 1, active: true },
+    ],
+  },
+  {
+
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7e40",
     name: "Neceser tejido blanco",
     category: "accesorios",
