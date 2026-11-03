@@ -1,0 +1,2 @@
+ALTER TABLE public.cart_items DROP CONSTRAINT IF EXISTS cart_items_session_id_product_id_key;
+ALTER TABLE public.cart_items ADD CONSTRAINT cart_items_session_product_variant_key UNIQUE NULLS NOT DISTINCT (session_id, product_id, variant_id);

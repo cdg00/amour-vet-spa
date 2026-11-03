@@ -8,6 +8,13 @@
       "when": 1793712847106,
       "tag": "0000_add_mallas_category",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793713746548,
+      "tag": "0001_cart_items_unique_per_variant",
+      "breakpoints": true
     }
   ]
 }
