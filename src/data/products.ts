@@ -429,10 +429,10 @@ export const PRODUCTS: ProductData[] = [
     featured: false,
     active: true,
     variants: [
-      { id: "0c840762-2bd7-4d4d-a441-45d5e9bd03f6", color: "Blanco", colorHex: "#FFFFFF", stock: 1, active: true },
-      { id: "4d7a2f18-6b95-4c3e-9a07-2e8d1b6f5c39", color: "Gris Claro", colorHex: "#D1D5DB", stock: 1, active: true },
-      { id: "9e5b8c30-1f46-4a72-b5d9-7c2e4a8f0d61", color: "Gris Negro", colorHex: "#374151", stock: 1, active: true },
-      { id: "6c1f9e47-3a28-4d5b-8e14-0b9f2c7a5d83", color: "Gris Oscuro", colorHex: "#4B5563", stock: 1, active: true },
+      { id: "0c840762-2bd7-4d4d-a441-45d5e9bd03f6", color: "Blanco", colorHex: "#FFFFFF", stock: 2, active: true },
+      { id: "4d7a2f18-6b95-4c3e-9a07-2e8d1b6f5c39", color: "Gris Claro", colorHex: "#D1D5DB", stock: 0, active: true },
+      { id: "9e5b8c30-1f46-4a72-b5d9-7c2e4a8f0d61", color: "Gris Negro", colorHex: "#374151", stock: 0, active: true },
+      { id: "6c1f9e47-3a28-4d5b-8e14-0b9f2c7a5d83", color: "Gris Oscuro", colorHex: "#4B5563", stock: 0, active: true },
     ],
   },
   {
@@ -689,7 +689,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a10",
-    name: "Malla negra",
+    name: "Maya negra",
     category: "mallas",
     price: 19000,
     image: "/products/malla-1.jpeg",
@@ -701,7 +701,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a20",
-    name: "Malla negra",
+    name: "Maya negra",
     category: "mallas",
     price: 21000,
     image: "/products/malla-2.jpeg",
@@ -713,7 +713,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a30",
-    name: "Malla marrón",
+    name: "Maya marrón",
     category: "mallas",
     price: 19000,
     image: "/products/malla-3.jpeg",
@@ -725,7 +725,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a40",
-    name: "Malla chocolate con blanco",
+    name: "Maya chocolate con blanco",
     category: "mallas",
     price: 19000,
     image: "/products/malla-4.jpeg",
@@ -737,7 +737,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a50",
-    name: "Malla verde musgo",
+    name: "Maya verde musgo",
     category: "mallas",
     price: 19000,
     image: "/products/malla-5.jpeg",
@@ -749,7 +749,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a60",
-    name: "Malla chocolate",
+    name: "Maya chocolate",
     category: "mallas",
     price: 19000,
     image: "/products/malla-6.jpeg",
@@ -761,7 +761,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a70",
-    name: "Malla blanca",
+    name: "Maya blanca",
     category: "mallas",
     price: 19000,
     image: "/products/malla-7.jpeg",
@@ -769,6 +769,30 @@ export const PRODUCTS: ProductData[] = [
     active: true,
     variants: [
       { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a71", color: "Blanco · 100", colorHex: "#FFFFFF", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a80",
+    name: "Maya turquesa",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-8.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a81", color: "Turquesa · 90", colorHex: "#14B8A6", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a90",
+    name: "Maya verde musgo",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-9.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a91", color: "Verde musgo · 100", colorHex: "#5B6B3A", stock: 1, active: true },
     ],
   },
 ];

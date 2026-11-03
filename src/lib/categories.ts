@@ -27,7 +27,7 @@ export const CATEGORIES: {
   { slug: "maquillaje", label: "Maquillaje", subtitle: "Belleza", image: maquillaje },
   { slug: "accesorios", label: "Accesorios", subtitle: "Detalles", image: accesorios },
   { slug: "boxers", label: "Boxer", subtitle: "Hombre", image: boxers },
-  { slug: "mallas", label: "Mallas", subtitle: "Verano", image: mallas },
+  { slug: "mallas", label: "Mayas", subtitle: "Verano", image: mallas },
 ];
 
 export const CATEGORY_IMAGE: Record<CategorySlug, string> = {
