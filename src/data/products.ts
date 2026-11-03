@@ -687,6 +687,90 @@ export const PRODUCTS: ProductData[] = [
       { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a7ee1", color: "Blanco · 100", colorHex: "#FFFFFF", stock: 1, active: true },
     ],
   },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a10",
+    name: "Malla negra",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-1.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a11", color: "Negro · 2", colorHex: "#111111", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a20",
+    name: "Malla negra",
+    category: "mallas",
+    price: 21000,
+    image: "/products/malla-2.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a21", color: "Negro · 5", colorHex: "#111111", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a30",
+    name: "Malla marrón",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-3.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a31", color: "Marrón · 4", colorHex: "#7B4A2D", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a40",
+    name: "Malla chocolate con blanco",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-4.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a41", color: "Chocolate con blanco · 2", colorHex: "#4E2E1E", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a50",
+    name: "Malla verde musgo",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-5.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a51", color: "Verde musgo · 4", colorHex: "#5B6B3A", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a60",
+    name: "Malla chocolate",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-6.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a61", color: "Chocolate · 4", colorHex: "#4E2E1E", stock: 1, active: true },
+    ],
+  },
+  {
+    id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a70",
+    name: "Malla blanca",
+    category: "mallas",
+    price: 19000,
+    image: "/products/malla-7.jpeg",
+    featured: false,
+    active: true,
+    variants: [
+      { id: "5b0c1e2a-7d3f-4a91-b6e8-0f2c9d4a8a71", color: "Blanco · 100", colorHex: "#FFFFFF", stock: 1, active: true },
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = PRODUCTS.reduce<Record<string, ProductData[]>>(
