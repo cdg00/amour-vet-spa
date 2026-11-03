@@ -3,4 +3,6 @@
 - [x] Confirmar las bajas en el catálogo y comprobar la vista de Bombachas.
 - [x] Pegar la foto subida a "Cola less de algodón tira ancha" y comprobarla en la ficha y en Bombachas.
 - [x] Agregar "Brochas" ($3.000, 1 unidad) y "Lip oil" ($3.000, 1 unidad) a Maquillaje con sus fotos.
-- [x] Pasar la panty media semiopaca (talle 1, $4.000) a Accesorios y mostrar su foto.
+- [x] Pasar la panty media semiopaca (talle 1, $4.000) a Accesorios y mostrar su foto.- [x] Agregar Cola less de algodón 2XL ($4.900, chocolate/chocolate claro/natural, 1 c/u) a Bombachas.
+- [x] Agregar Conjunto negro texturado talle 100 ($14.000, 1 unidad) a Lencería.
+- [x] Agregar Conjunto blanco de encaje talle 100 ($9.000, 1 unidad) a Lencería.
