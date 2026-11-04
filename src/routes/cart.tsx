@@ -40,6 +40,7 @@ function CartPage() {
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [delivery, setDelivery] = useState("");
 
   const { data: cart, isLoading } = useQuery({
     queryKey: ["cart", sessionId],
@@ -80,13 +81,16 @@ function CartPage() {
         `Mis datos:\n` +
         `Nombre y Apellido: ${name}\n` +
         `Teléfono: ${phone}\n` +
-        `${address ? `Dirección/Entrega: ${address}\n` : ""}` +
-        `\nDatos bancarios para transferencia:\n` +
+        `Entrega: ${delivery}\n` +
+        `${address ? `Dirección / detalle: ${address}\n` : ""}` +
+        `\nMétodo de pago: Transferencia bancaria (${BANK.bank})\n` +
         `Alias: ${BANK.alias}\n` +
         `Titular: ${BANK.holder}\n\n` +
         `IMPORTANTE: Es obligatorio enviar el comprobante de transferencia a este chat de WhatsApp para confirmar el pedido.\n\n` +
         `Entregas: Hacemos envíos en Barker, Villa Cacique y Tandil y coordinamos un punto de entrega. Para los demás lugares todavía no está disponible o el envío corre por cuenta de un comisionista.`;
-      window.open(whatsappLink(msg), "_blank", "noopener,noreferrer");
+      const url = whatsappLink(msg);
+      const w = window.open(url, "_blank", "noopener,noreferrer");
+      if (!w) window.location.href = url;
     },
     onError: (e) => toast.error(e.message ?? "No se pudo finalizar"),
   });
@@ -102,6 +106,7 @@ function CartPage() {
     if (!name.trim()) return toast.error("Ingresá tu nombre y apellido");
     const r = phoneSchema.safeParse(phone);
     if (!r.success) return toast.error(r.error.issues[0]?.message ?? "Teléfono inválido");
+    if (!delivery) return toast.error("Elegí una opción de entrega");
     if (items.length === 0) return toast.error("El carrito está vacío");
     checkout.mutate();
   }
@@ -204,28 +209,41 @@ function CartPage() {
                 required
                 className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
               />
+              <select
+                value={delivery}
+                onChange={(e) => setDelivery(e.target.value)}
+                required
+                className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
+              >
+                <option value="">Elegí cómo recibir tu pedido</option>
+                <option value="Envío a domicilio en Barker / Villa Cacique">Envíos a domicilio en Barker / Villa Cacique</option>
+                <option value="Punto de encuentro a coordinar en Tandil">Punto de encuentro a coordinar en Tandil</option>
+              </select>
               <input
                 type="text"
-                placeholder="Dirección / Entrega (opcional)"
+                placeholder="Dirección o detalle de entrega (opcional)"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
               />
-              <p className="text-[11px] text-muted-foreground">
-                Pago por transferencia — Alias: {BANK.alias} · Titular: {BANK.holder}
-              </p>
+              <div className="border border-border bg-background p-4 text-sm space-y-1">
+                <p className="font-medium text-foreground">Transferencia bancaria · {BANK.bank}</p>
+                <p className="text-muted-foreground">Titular: {BANK.holder}</p>
+                <p className="text-muted-foreground">Alias: {BANK.alias}</p>
+                <p className="pt-2 text-foreground">Realiza la transferencia y envía el comprobante de pago por WhatsApp.</p>
+              </div>
               <p className="text-[11px] text-muted-foreground">
                 Es obligatorio enviar el comprobante de transferencia al chat de WhatsApp para confirmar el pedido.
               </p>
               <p className="text-[11px] text-muted-foreground">
-                Entregas: hacemos envíos en Barker, Villa Cacique y Tandil y coordinamos un punto de entrega. Para los demás lugares todavía no está disponible o el envío corre por cuenta de un comisionista.
+                Entregas: envíos a domicilio en Barker / Villa Cacique, y punto de encuentro a coordinar en Tandil.
               </p>
               <button
                 type="submit"
                 disabled={checkout.isPending}
                 className="w-full bg-rose-bright text-rose-bright-foreground py-4 text-[11px] tracking-wide-editorial uppercase hover:opacity-90 disabled:opacity-60 transition-opacity"
               >
-                {checkout.isPending ? "Procesando…" : "Confirmar pedido por WhatsApp"}
+                {checkout.isPending ? "Procesando…" : "Enviar pedido por WhatsApp"}
               </button>
             </form>
           </aside>
