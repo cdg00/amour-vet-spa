@@ -12,7 +12,8 @@ export const CONTACT = {
 };
 
 export const BANK = {
-  alias: "CHINO.ACACIA.CABO",
+  bank: "Banco Provincia",
+  alias: "chino.acacia.cabo",
   holder: "Camila Denis Gómez",
 };
 
