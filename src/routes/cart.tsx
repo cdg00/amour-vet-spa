@@ -87,7 +87,7 @@ function CartPage() {
         `Alias: ${BANK.alias}\n` +
         `Titular: ${BANK.holder}\n\n` +
         `IMPORTANTE: Es obligatorio enviar el comprobante de transferencia a este chat de WhatsApp para confirmar el pedido.\n\n` +
-        `Entregas: Hacemos envíos en Barker, Villa Cacique y Tandil y coordinamos un punto de entrega. Para los demás lugares todavía no está disponible o el envío corre por cuenta de un comisionista.`;
+        `Entregas: En Barker y Villa Cacique se retira por mi casa o se coordina el retiro; publicamos qué días hacemos envíos. En Tandil coordinamos un punto de entrega.`;
       const url = whatsappLink(msg);
       const w = window.open(url, "_blank", "noopener,noreferrer");
       if (!w) window.location.href = url;
@@ -216,7 +216,7 @@ function CartPage() {
                 className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-rose-bright"
               >
                 <option value="">Elegí cómo recibir tu pedido</option>
-                <option value="Envío a domicilio en Barker / Villa Cacique">Envíos a domicilio en Barker / Villa Cacique</option>
+                <option value="Retiro en Barker / Villa Cacique">Retiro en Barker / Villa Cacique (o envío en los días publicados)</option>
                 <option value="Punto de encuentro a coordinar en Tandil">Punto de encuentro a coordinar en Tandil</option>
               </select>
               <input
@@ -236,7 +236,7 @@ function CartPage() {
                 Es obligatorio enviar el comprobante de transferencia al chat de WhatsApp para confirmar el pedido.
               </p>
               <p className="text-[11px] text-muted-foreground">
-                Entregas: envíos a domicilio en Barker / Villa Cacique, y punto de encuentro a coordinar en Tandil.
+                Entregas: en Barker y Villa Cacique se retira por casa o se coordina el retiro (publicamos qué días hacemos envíos). En Tandil coordinamos un punto de entrega.
               </p>
               <button
                 type="submit"

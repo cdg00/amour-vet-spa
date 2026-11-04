@@ -15,13 +15,12 @@ export default function ShippingNotice() {
           <div className="flex flex-col items-center gap-3">
             <Truck size={26} strokeWidth={1.3} />
             <p className="text-sm">
-              Hacemos envíos en <strong>Villa Cacique</strong>, <strong>Barker</strong> y{" "}
-              <strong>Tandil</strong>.
+              En <strong>Barker</strong> y <strong>Villa Cacique</strong> se retira por casa o se coordina el retiro. Publicamos qué días hacemos envíos.
             </p>
           </div>
           <div className="flex flex-col items-center gap-3">
             <MapPin size={26} strokeWidth={1.3} />
-            <p className="text-sm">Coordinamos un punto de entrega por WhatsApp.</p>
+            <p className="text-sm">En <strong>Tandil</strong> coordinamos un punto de entrega por WhatsApp.</p>
           </div>
           <div className="flex flex-col items-center gap-3">
             <ReceiptText size={26} strokeWidth={1.3} />
