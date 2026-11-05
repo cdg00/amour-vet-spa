@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
+import { useNavigate } from "@tanstack/react-router";
 import { listProducts } from "@/lib/products.functions";
 import ProductCard from "@/components/ProductCard";
 import { CATEGORIES, categoryLabel } from "@/lib/categories";
@@ -22,6 +23,19 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
       wrapRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }, [initialCategory]);
+
+  const navigate = useNavigate();
+  const choose = (slug: string | undefined) => {
+    setCategory(slug);
+    // Save the section in the address so going back from a product returns here.
+    lastProp.current = slug;
+    navigate({
+      to: window.location.pathname,
+      search: slug ? { category: slug } : {},
+      replace: true,
+      resetScroll: false,
+    } as never);
+  };
 
   const fetchProducts = useServerFn(listProducts);
   const { data, isLoading } = useQuery({
@@ -52,7 +66,7 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
       <div className="flex flex-wrap justify-center gap-2 mb-12">
         <button
           type="button"
-          onClick={() => setCategory(undefined)}
+          onClick={() => choose(undefined)}
           className={filterClass(!category)}
         >
           Ver Todo
@@ -61,7 +75,7 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
           <button
             key={c.slug}
             type="button"
-            onClick={() => setCategory(c.slug)}
+            onClick={() => choose(c.slug)}
             className={filterClass(category === c.slug)}
           >
             {c.label}

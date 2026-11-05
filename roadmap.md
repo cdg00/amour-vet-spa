@@ -7,3 +7,4 @@
 - [x] Agregar Conjunto negro texturado talle 100 ($14.000, 1 unidad) a Lencería.
 - [x] Agregar Conjunto blanco de encaje talle 100 ($9.000, 1 unidad) a Lencería.
 - [x] Acomodar la entrega en la compra: retiro por la casa en Barker (Barker y Villa Cacique) avisando qué buscar; Tandil con punto de entrega.
+- [x] Al salir de una prenda, volver a la misma sección (Medias, Bombachas, etc.) en vez del inicio.
