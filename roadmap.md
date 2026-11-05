@@ -6,3 +6,4 @@
 - [x] Pasar la panty media semiopaca (talle 1, $4.000) a Accesorios y mostrar su foto.- [x] Agregar Cola less de algodón 2XL ($4.900, chocolate/chocolate claro/natural, 1 c/u) a Bombachas.
 - [x] Agregar Conjunto negro texturado talle 100 ($14.000, 1 unidad) a Lencería.
 - [x] Agregar Conjunto blanco de encaje talle 100 ($9.000, 1 unidad) a Lencería.
+- [x] Acomodar la entrega en la compra: retiro por la casa en Barker (Barker y Villa Cacique) avisando qué buscar; Tandil con punto de entrega.
