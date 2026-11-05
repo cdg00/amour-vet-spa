@@ -66,7 +66,7 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
       <div className="flex flex-wrap justify-center gap-2 mb-12">
         <button
           type="button"
-          onClick={() => setCategory(undefined)}
+          onClick={() => choose(undefined)}
           className={filterClass(!category)}
         >
           Ver Todo
@@ -75,7 +75,7 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
           <button
             key={c.slug}
             type="button"
-            onClick={() => setCategory(c.slug)}
+            onClick={() => choose(c.slug)}
             className={filterClass(category === c.slug)}
           >
             {c.label}
