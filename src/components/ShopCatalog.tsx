@@ -30,8 +30,8 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
     // Save the section in the address so going back from a product returns here.
     lastProp.current = slug;
     navigate({
-      to: ".",
-      search: (prev: Record<string, unknown>) => ({ ...prev, category: slug }),
+      to: window.location.pathname,
+      search: slug ? { category: slug } : {},
       replace: true,
       resetScroll: false,
     } as never);
