@@ -23,6 +23,19 @@ export default function ShopCatalog({ category: initialCategory }: ShopCatalogPr
     });
   }, [initialCategory]);
 
+  const navigate = useNavigate();
+  const choose = (slug: string | undefined) => {
+    setCategory(slug);
+    // Save the section in the address so going back from a product returns here.
+    lastProp.current = slug;
+    navigate({
+      to: ".",
+      search: (prev: Record<string, unknown>) => ({ ...prev, category: slug }),
+      replace: true,
+      resetScroll: false,
+    } as never);
+  };
+
   const fetchProducts = useServerFn(listProducts);
   const { data, isLoading } = useQuery({
     queryKey: ["products", "all"],

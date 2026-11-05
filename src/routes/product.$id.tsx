@@ -80,6 +80,14 @@ function ProductPage() {
 
   return (
     <div className="pt-28 pb-24 mx-auto max-w-6xl px-6">
+      <Link
+        to="/"
+        search={{ category: product.category }}
+        hash="catalogo"
+        className="mb-6 inline-flex items-center gap-2 text-[11px] tracking-wide-editorial uppercase text-foreground/70 hover:text-rose-bright"
+      >
+        ← Volver a {categoryLabel(product.category)}
+      </Link>
       <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
         <div>
           <div className="flex snap-x snap-mandatory overflow-x-auto">
