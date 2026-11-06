@@ -4,7 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
-import { Trash2 } from "lucide-react";
+import { Trash2, Heart } from "lucide-react";
 import {
   getCart,
   removeFromCart,
@@ -41,6 +41,11 @@ function CartPage() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [delivery, setDelivery] = useState("");
+  const [orderResult, setOrderResult] = useState<{
+    orderId: string;
+    total: number;
+    whatsappUrl: string;
+  } | null>(null);
 
   const { data: cart, isLoading } = useQuery({
     queryKey: ["cart", sessionId],
