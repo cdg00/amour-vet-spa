@@ -123,7 +123,7 @@ function CartPage() {
             <Heart size={32} strokeWidth={1.5} className="text-rose-bright" fill="currentColor" />
           </div>
           <h1 className="mt-5 font-serif text-3xl text-foreground">
-            ¡Muchas gracias por confiar en Fashion Íntima! 💖
+            ¡Muchas gracias por confiar en Fashion Intimate! 💖
           </h1>
           <p className="mt-3 text-sm text-foreground/80">
             Tu pedido ha sido registrado con éxito. Estamos felices de acompañarte.
