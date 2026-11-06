@@ -94,8 +94,7 @@ function CartPage() {
         `IMPORTANTE: Es obligatorio enviar el comprobante de transferencia a este chat de WhatsApp para confirmar el pedido.\n\n` +
         `Entregas: en Barker y Villa Cacique se retira por nuestra casa en Barker (avisanos qué querés pasar a buscar). En Tandil coordinamos un punto de entrega.`;
       const url = whatsappLink(msg);
-      const w = window.open(url, "_blank", "noopener,noreferrer");
-      if (!w) window.location.href = url;
+      setOrderResult({ orderId: res.orderId, total: res.total, whatsappUrl: url });
     },
     onError: (e) => toast.error(e.message ?? "No se pudo finalizar"),
   });
