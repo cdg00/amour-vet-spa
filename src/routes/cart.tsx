@@ -115,6 +115,58 @@ function CartPage() {
     checkout.mutate();
   }
 
+  if (orderResult) {
+    return (
+      <div className="pt-32 pb-24 mx-auto max-w-xl px-6">
+        <div className="rounded-2xl bg-rose-bright/10 border border-rose-bright/30 p-8 text-center">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-bright/20 animate-pulse">
+            <Heart size={32} strokeWidth={1.5} className="text-rose-bright" fill="currentColor" />
+          </div>
+          <h1 className="mt-5 font-serif text-3xl text-foreground">
+            ¡Muchas gracias por confiar en Fashion Íntima! 💖
+          </h1>
+          <p className="mt-3 text-sm text-foreground/80">
+            Tu pedido ha sido registrado con éxito. Estamos felices de acompañarte.
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Pedido #{orderResult.orderId.slice(0, 8)} · Total: {formatARS(orderResult.total)}
+          </p>
+
+          <div className="mt-8 rounded-xl border border-border bg-background p-5 text-left text-sm space-y-1">
+            <p className="font-medium text-foreground">Datos para transferir</p>
+            <p className="text-muted-foreground">Banco: {BANK.bank}</p>
+            <p className="text-muted-foreground">Titular: {BANK.holder}</p>
+            <p className="text-muted-foreground">Alias: {BANK.alias}</p>
+            <p className="pt-2 text-foreground">
+              Recordá enviar el comprobante de pago por WhatsApp para procesar tu despacho.
+            </p>
+          </div>
+
+          <div className="mt-4 text-left text-sm text-foreground/80 space-y-1">
+            <p>🚚 Se retira por nuestra casa en Barker (Barker y Villa Cacique); avisanos qué querés pasar a buscar.</p>
+            <p>📍 Punto de encuentro a coordinar en Tandil.</p>
+          </div>
+
+          <a
+            href={orderResult.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 block w-full bg-rose-bright text-rose-bright-foreground py-4 text-[11px] tracking-wide-editorial uppercase hover:opacity-90 transition-opacity rounded-full"
+          >
+            Enviar comprobante por WhatsApp 📲
+          </a>
+          <Link
+            to="/"
+            hash="catalogo"
+            className="mt-4 inline-block text-xs text-muted-foreground underline hover:text-foreground"
+          >
+            Volver a la tienda
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="pt-32 pb-24 mx-auto max-w-5xl px-6">
       <div className="text-center mb-12">
